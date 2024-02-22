@@ -1,0 +1,18 @@
+<!-- app/views/welcome/index.html.erb -->
+
+<div class="welcome-container">
+  <h1>Welcome Event Trigger and Email Notification System</h1>
+
+  <div class="button-container">
+    <%= button_to 'Create Event A', create_event_a_path, method: :post, class: 'create-event-button' %>
+    <%= button_to 'Create Event B', create_event_b_path, method: :post, class: 'create-event-button' %>
+  </div>
+
+  <div class="logout-container">
+    <% if user_signed_in? %>
+      <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'logout-button' %>
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path, class: 'login-button' %>
+    <% end %>
+  </div>
+</div>
